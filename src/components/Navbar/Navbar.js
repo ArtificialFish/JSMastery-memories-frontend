@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AppBar, Avatar, Button, Toolbar, Typography } from "@material-ui/core";
-import decode from "jwt-decode";
 import { useDispatch } from "react-redux";
+import decode from "jwt-decode";
 
 import useStyles from "./styles";
-import memories from "../../images/memories.png";
+// import memories from "../../images/memories.png";
 import memoriesLogo from "../../images/memoriesLogo.png";
 import memoriesText from "../../images/memoriesText.png";
 import * as actionType from "../../constants/actionTypes";
@@ -53,7 +53,7 @@ const Navbar = () => {
                         <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Logout</Button>
                     </div>
                 ) : (
-                    <Button component={Link} to="/auth" variant="contained" color="primary">Sign In</Button>
+                    <Button href="/auth" variant="contained" color="primary">Sign In</Button>
                 )}
             </Toolbar>
         </AppBar>

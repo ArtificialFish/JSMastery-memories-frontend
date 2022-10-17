@@ -2,12 +2,9 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Avatar, Button, Paper, Grid, Typography, Container } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
-//import { GoogleLogin } from "@react-oauth/google";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-// import jwt_decode from "jwt-decode";
 
 import { signin, signup } from "../../actions/auth";
-// import { AUTH } from "../../constants/actionTypes.js";
 import useStyles from "./styles";
 import Input from "./Input";
 
@@ -40,54 +37,7 @@ const Auth = () => {
 
     };
     
-    // const googleSuccess = async (res) => {
-        
-    //     try {
-    //         dispatch({ type: AUTH, data: { result, token } });
-
-    //         navigate("/");
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // };
-    
     const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
-    
-    // -------------------------------------------------------
-
-    // const [user, setUser] = useState({});
-
-    // function handleCallBackResponse(response) {
-    //     const result = response?.profileObj;
-    //     const token = response?.tokenId;
-
-    //     console.log("OLD: " + token);
-
-    //     console.log("Encoded JWT ID token: " + response.credential);
-    //     var userObject = jwt_decode(response.credential);
-    //     console.log(userObject);
-    //     setUser(userObject);
-
-    //     var userToken = response.credential;
-    //     console.log("NEW: " + userToken);
-    //     console.log("RESPONSE: " + response)
-
-    //     dispatch({ type: AUTH, data: { result, userToken } })
-
-    //     navigate("/");
-    // }
-
-    // useEffect(() => {
-    //     /* global google*/
-    //     google.accounts.id.initialize({
-    //         client_id: "1086141858682-tlfmm1vuicva12r449a0iemn5i76vrab.apps.googleusercontent.com",
-    //         callback: handleCallBackResponse
-    //     });
-
-    //     google.accounts.id.renderButton(document.getElementById("signInDiv"), { theme: "filled_blue", size: "large" })
-
-    // }, []);
-
 
     return (
         <Container component="main" maxWidth="xs">

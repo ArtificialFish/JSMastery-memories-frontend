@@ -25,17 +25,7 @@ const Home = () => {
     const [currentId, setCurrentId] = useState(0);
     const [search, setSearch] = useState("");
     const [tags, setTags] = useState([]);
-
-    const handleKeyPress = (e) => {
-        if(e.keyCode === 13) {
-            searchPost();
-        }
-    }
-
-    const handleAdd = (tag) => setTags([...tags, tag]);
-
-    const handleDelete = (tagToDelete) => setTags(tags.filter((tag) => tag !== tagToDelete));
-
+    
     const searchPost = () => {
         if (search.trim() || tags) {
             dispatch(getPostsBySearch({ search, tags: tags.join(",") }));
@@ -43,7 +33,17 @@ const Home = () => {
         } else {
             navigate("/");
         }
-    }
+    };
+
+    const handleKeyPress = (e) => {
+        if(e.keyCode === 13) {
+            searchPost();
+        }
+    };
+
+    const handleAdd = (tag) => setTags([...tags, tag]);
+
+    const handleDelete = (tagToDelete) => setTags(tags.filter((tag) => tag !== tagToDelete));
 
     return (
         <Grow in>
